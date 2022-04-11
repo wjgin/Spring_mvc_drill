@@ -31,6 +31,7 @@
    * default option: 요청이 null일 경우, 함수의 인자를 default로 채움 -> required에 상관이 없어짐
 * @ModelAttribute: paramter -> Object binding
    * not primitive type(int, Interger, String), argument resolver
+   * 많은 생략 가능, 어노테이션 생략 시 함수 인자의 객체에 파라미터 자동 매핑, attribute 생성(객체의 이름 앞 글자만 소문자로 치환)
 
 ### Response
 * ResponseEntity<>(http message, http status): HTTP header, body 정보를 가지는 객체
@@ -38,3 +39,7 @@
 * @ResponseBody: return value는 view가 아닌 HTTP message를 제공
 * @RestController: @Controller + @ResponseBody
 * @ResponseStatus: @ResponseBody를 이용한 return시 상태 코드의 부재를 해결 -> 정적인 상태만 제공
+* @RedirectAttribute: redirect시 pathVariable, url query, encoding 제공
+
+### PRG(Post Redirect Get) pattern
+* 중복 등록을 제거하기 위해 개발 패턴: Post -> redirect -> Get 전환
